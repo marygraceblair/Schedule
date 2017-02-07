@@ -1,0 +1,27 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    container_name: ofpl-db
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+  web:
+    build:
+      context: ./web
+      args:
+        env: dev
+    command: sh -c "python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:8000"
+    environment:
+     - DJANGO_SETTINGS_MODULE=config.settings.dev
+    volumes:
+      - ./web:/app
+      - ./static:/static
+      - ./media:/media
+    depends_on:
+      - db
+      - es
+    ports:
+      - "8000:8000"
+
+volumes:
+  db-data:
