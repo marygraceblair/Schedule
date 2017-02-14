@@ -1,0 +1,11 @@
+Django
+psycopg2
+gunicorn
+unipath
+django-allauth
+django-compressor
+wagtail
+git+git://github.com/kevindice/wagtail-nav-menus.git
+django-braces
+django-model-utils
+git+git://github.com/adamcharnock/django-hordak.git@725c861

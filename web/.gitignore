@@ -1,0 +1,5 @@
+.sass-cache/
+secret.py
+schedule/static/
+schedule/media/
+schedule/core/static/bower

@@ -19,7 +19,6 @@ services:
       - ./media:/media
     depends_on:
       - db
-      - es
     ports:
       - "8000:8000"
 
