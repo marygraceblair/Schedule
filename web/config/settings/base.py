@@ -59,6 +59,7 @@ STOCK_APPS = [
 ]
 
 PROJECT_APPS = [
+    'schedule.classes'
 ]
 
 INSTALLED_APPS = STOCK_APPS + PROJECT_APPS
