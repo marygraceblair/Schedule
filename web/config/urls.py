@@ -15,6 +15,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.generic.base import TemplateView
 
+from schedule.classes import urls as scheduleurls
+
 admin.autodiscover()
 
 urlpatterns = []
@@ -33,7 +35,7 @@ if settings.DEBUG:
 
 # Normal URL Definition
 normalpatterns = [
-    #url(r'^$', core_views.home, name='home'),
+    url(r'^$', include(scheduleurls)),
     url(r'^admin/', admin.site.urls),
 ]
 
